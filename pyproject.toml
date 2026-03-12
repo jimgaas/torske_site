@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "torske_site"
+dynamic = ["version"]
+description = ""
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [{name = "Solveit", email = "nobody@fast.ai"}]
+keywords = ['nbdev']
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+]
+dependencies = ["fastlite", "python-fasthtml"]
+
+[project.urls]
+Repository = "https://github.com/jimgaas/torske_site"
+Documentation = "https://jimgaas.github.io/torske_site/"
+
+[project.entry-points.nbdev]
+torske_site = "torske_site._modidx:d"
+
+[tool.setuptools.dynamic]
+version = {attr = "torske_site.__version__"}
+
+[tool.setuptools.packages.find]
+include = ["torske_site"]
+
+[tool.nbdev]

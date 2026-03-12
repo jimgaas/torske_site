@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "torske_site"
+  site-url: "https://jimgaas.github.io/torske_site"
+  description: ""
+  repo-branch: main
+  repo-url: "https://github.com/jimgaas/torske_site"
