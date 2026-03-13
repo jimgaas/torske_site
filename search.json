@@ -1,0 +1,52 @@
+[
+  {
+    "objectID": "db.html",
+    "href": "db.html",
+    "title": "db",
+    "section": "",
+    "text": "write me a hello world fasthtml app\n\n🤖Reply🤖\n🧠🧠🧠🧠🧠🧠🧠🧠🧠🧠🧠🧠🧠🧠🧠\napp, rt = fast_app()\n\n@rt('/')\ndef get(): return Titled(\"Hello World\", P(\"Hello, world!\"))\n\nserve()\n\nsource\n\n\nget\n\ndef get(\n    \n):",
+    "crumbs": [
+      "db"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "torske_site",
+    "section": "",
+    "text": "This file will become your README and also the index of your documentation.",
+    "crumbs": [
+      "torske_site"
+    ]
+  },
+  {
+    "objectID": "index.html#developer-guide",
+    "href": "index.html#developer-guide",
+    "title": "torske_site",
+    "section": "Developer Guide",
+    "text": "Developer Guide\nIf you are new to using nbdev here are some useful pointers to get you started.\n\nInstall torske_site in Development mode\n# make sure torske_site package is installed in development mode\n$ pip install -e .\n\n# make changes under nbs/ directory\n# ...\n\n# compile to have changes apply to torske_site\n$ nbdev_prepare",
+    "crumbs": [
+      "torske_site"
+    ]
+  },
+  {
+    "objectID": "index.html#usage",
+    "href": "index.html#usage",
+    "title": "torske_site",
+    "section": "Usage",
+    "text": "Usage\n\nInstallation\nInstall latest from the GitHub repository:\n$ pip install git+https://github.com/jimgaas/torske_site.git\nor from conda\n$ conda install -c jimgaas torske_site\nor from pypi\n$ pip install torske_site\n\n\nDocumentation\nDocumentation can be found hosted on this GitHub repository’s pages. Additionally you can find package manager specific guidelines on conda and pypi respectively.",
+    "crumbs": [
+      "torske_site"
+    ]
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "torske_site",
+    "section": "How to use",
+    "text": "How to use\nFill me in please! Don’t forget code examples:\n\n1+1\n\n2",
+    "crumbs": [
+      "torske_site"
+    ]
+  }
+]
