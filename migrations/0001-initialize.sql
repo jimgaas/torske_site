@@ -1,12 +1,14 @@
 -- Initial schema for Torske Klubben
 
-CREATE TABLE members (
+CREATE TABLE member (
     id INTEGER PRIMARY KEY,
-    name TEXT,
+    first_name TEXT,
+    last_name TEXT,
+    suffix TEXT,
     email TEXT
 );
 
-CREATE TABLE events (
+CREATE TABLE event (
     id INTEGER PRIMARY KEY,
     name TEXT,
     date INTEGER,
@@ -17,63 +19,59 @@ CREATE TABLE events (
     deadline INTEGER
 );
 
-CREATE TABLE reservations (
+CREATE TABLE reservation (
     id INTEGER PRIMARY KEY,
-    member_id INTEGER REFERENCES members(id),
-    event_id INTEGER REFERENCES events(id),
-    guests INTEGER,
+    invitation_id INTEGER REFERENCES invitation(id),
     paid INTEGER,
     created_at INTEGER,
     stripe_payment_intent TEXT
 );
 
-CREATE TABLE invitations (
+CREATE TABLE invitation (
     id INTEGER PRIMARY KEY,
-    event_id INTEGER REFERENCES events(id),
-    member_id INTEGER REFERENCES members(id),
+    event_id INTEGER REFERENCES event(id),
+    member_id INTEGER REFERENCES member(id),
     status TEXT
 );
 
-CREATE TABLE guests (
+CREATE TABLE guest (
     id INTEGER PRIMARY KEY,
-    member_id INTEGER REFERENCES members(id),
-    event_id INTEGER REFERENCES events(id),
+    reservation_id INTEGER REFERENCES reservation(id),
     guest_name TEXT
 );
 
-CREATE TABLE email_groups (
+CREATE TABLE email_group (
     id INTEGER PRIMARY KEY,
     name TEXT
 );
 
-CREATE TABLE email_group_members (
+CREATE TABLE email_group_member (
     id INTEGER PRIMARY KEY,
-    group_id INTEGER REFERENCES email_groups(id),
-    member_id INTEGER REFERENCES members(id)
+    group_id INTEGER REFERENCES email_group(id),
+    member_id INTEGER REFERENCES member(id)
 );
 
-CREATE TABLE contacts (
+CREATE TABLE contact (
     id INTEGER PRIMARY KEY,
     first_name TEXT,
     last_name TEXT,
     email TEXT
 );
 
-CREATE TABLE contact_groups (
+CREATE TABLE contact_group (
     id INTEGER PRIMARY KEY,
     name TEXT
 );
 
-CREATE TABLE contact_group_members (
+CREATE TABLE contact_group_member (
     id INTEGER PRIMARY KEY,
-    group_id INTEGER REFERENCES contact_groups(id),
-    contact_id INTEGER REFERENCES contacts(id)
+    group_id INTEGER REFERENCES contact_group(id),
+    contact_id INTEGER REFERENCES contact(id)
 );
 
-CREATE TABLE payments (
+CREATE TABLE payment (
     id INTEGER PRIMARY KEY,
-    event_id INTEGER REFERENCES events(id),
-    member_id INTEGER REFERENCES members(id),
+    reservation_id INTEGER REFERENCES reservation(id),
     total_lunches INTEGER,
     total_owed REAL,
     cash_amt REAL,
@@ -85,10 +83,9 @@ CREATE TABLE payments (
     date_paid TEXT
 );
 
-CREATE TABLE reservation_changes (
+CREATE TABLE reservation_change (
     id INTEGER PRIMARY KEY,
-    event_id INTEGER REFERENCES events(id),
-    member_id INTEGER REFERENCES members(id),
+    reservation_id INTEGER REFERENCES reservation(id),
     first_name TEXT,
     last_name TEXT,
     old_status TEXT,

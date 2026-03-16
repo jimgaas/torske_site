@@ -15,7 +15,7 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
 ]
-dependencies = ["fastlite", "python-fasthtml"]
+dependencies = ["fastlite", "python-fasthtml", "fastmigrate"]
 
 [project.urls]
 Repository = "https://github.com/jimgaas/torske_site"

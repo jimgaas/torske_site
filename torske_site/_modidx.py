@@ -5,4 +5,4 @@ d = { 'settings': { 'branch': 'main',
                 'doc_host': 'https://jimgaas.github.io',
                 'git_url': 'https://github.com/jimgaas/torske_site',
                 'lib_path': 'torske_site'},
-  'syms': {'torske_site.db': {'torske_site.db.get': ('db.html#get', 'torske_site/db.py')}}}
+  'syms': {'torske_site.db': {}}}
