@@ -1,4 +1,4 @@
-__all__ = ["_Meta", "Contact", "Contact_Group", "Contact_Group_Member", "Email_Group", "Email_Group_Member", "Event", "Guest", "Invitation", "Member", "Payment", "Reservation", "Reservation_Change"]
+__all__ = ["_Meta", "Contact", "Contact_Group", "Contact_Group_Member", "Email_Group", "Email_Group_Member", "Event", "Guest", "Invitation", "Member", "Payment", "Reservation", "Reservation_Change", "Waitlist"]
 from dataclasses import dataclass
 from fastlite.kw import UNSET
 @dataclass
@@ -103,4 +103,12 @@ class Reservation_Change:
     changed_at: str | None = UNSET
     changed_at_unix: int | None = UNSET
     email_sent: int | None = UNSET
+
+@dataclass
+class Waitlist:
+    id: int | None = UNSET
+    event_id: int | None = UNSET
+    member_id: int | None = UNSET
+    created_at: int | None = UNSET
+    status: str | None = UNSET
 
